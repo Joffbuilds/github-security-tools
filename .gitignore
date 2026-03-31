@@ -1,48 +1,70 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+# =========================
+# Dependabot tool outputs
+# =========================
 
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
+# Default output folders from this script
+dependabot_summary_*/
 
-# Configuration
-wp-config.php
+# Generic safety net (in case someone renames output dirs)
+*_summary_*/
 
-# Example themes
-/wp-content/themes/twenty*/
+# Raw output files (high risk if committed)
+*.csv
+*.json
 
-# Example plugin
-/wp-content/plugins/hello.php
+# Keep manually curated docs if needed
+!README.md
+!examples/*.md
 
-# Uploads
-/wp-content/uploads/
 
-# Log files
-*.log
+# =========================
+# Python
+# =========================
 
-# htaccess
-/.htaccess
+__pycache__/
+*.py[cod]
+*$py.class
 
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
 
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Mypy / type checking
+.mypy_cache/
+
+
+# =========================
+# OS / Editor junk
+# =========================
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# JetBrains
+.idea/
+
+
+# =========================
+# Secrets / local configs
+# =========================
+
+.env
+.env.*
